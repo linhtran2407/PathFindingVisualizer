@@ -53,23 +53,87 @@ Priority queue will allow us to do it.
 // min heap implementation using array
 class PriorityQueue{
     constructor() {
-        this.value = []
+        this.values = []
     }
 
-    enqueue(value, priority) {
+    enqueue(values, priority) {
         // create new node and push into the heap
-        let newNode = new Node(value, priority)
-        this.value.push(newNode)
+        let newNode = new Node(values, priority)
+        this.values.push(newNode)
 
         // store the new node's index and value
-        const index = this.value.length()-1
-        const element = this.value[index]
+        const index = this.values.length-1
+        const element = this.values[index]
 
         while(index>0){
             // store the new node's parent's index and value
             const parentIndex = Math.floor((index+1)/2)
-            const parent = this.value[parentIndex]
+            const parent = this.values[parentIndex]
+
+            // compare priority then heapify
+            // if found the correct place, break
+            if (element.priority >= parent.priority){break}
+            // else swap parent and new node
+            this.values[index] = parent
+            this.values[parentIndex] = element
+            // update the index to continue heapifying
+            index = parentIndex
         }
+
+        return this.values
+    }
+
+    dequeue(){
+        if (this.values.length === 0) {return null}
+        // store and return the min of the heap
+        const min = this.values[0]
+
+        /** re-heapify */ 
+        // pop the last val and set as the new node
+        const end = this.values.pop()
+        if (this.values.length > 0){
+            this.values[0] = end
+
+            let index = 0
+            const length = this.values.length
+            const element = this.values[index]
+
+            while(true){
+                let leftIndex = index*2 + 1
+                let rightIndex = index*2 + 2
+                let rightChild, leftChild
+                let swap = null
+
+                // check if left child is valid
+                if (leftIndex < length){
+                    // swap if satisfied
+                    leftChild = this.values[leftIndex]
+                    if(element.priority > leftChild.element){
+                        swap = leftIndex
+                    }
+                }
+
+                // check if right child is valid
+                if (rightIndex < length){
+                    rightChild = this.values[rightIndex]
+                    // if no swap made and right child is less prioritized than the current node
+                    // or there is a swap but the right is less prioritized than the left
+                    if (swap === null && element.priority > rightChild.priority || swap !== null && rightChild.priority < leftChild.priority){
+                        swap = rightIndex
+                    }
+                }
+
+                // stopping condition: when there is no swap could be made
+                if (swap === null) break
+                // else swap
+                this.values[index] = this.values[swap]
+                this.values[swap] = element
+                // update index to continue checking
+                index = swap
+            }
+        }
+
+        return min
     }
 }
 
