@@ -41,7 +41,7 @@ export default class PathFindingVisualizer extends Component {
                     return (
                     <div key={rowIdx}>
                         {row.map((node, nodeIdx) => {
-                            return <Node key={nodeIdx} isStart={true} test1={'foo'} test2={'kappa'} mouseIsPressed={mouseIsPressed}></Node>
+                            return<Node key={nodeIdx} isStart={true} test1={'foo'} test2={'kappa'} mouseIsPressed={mouseIsPressed}></Node>
                         })}
                     </div>
                     )
