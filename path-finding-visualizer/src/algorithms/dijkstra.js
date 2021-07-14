@@ -12,8 +12,10 @@ export function dijkstra(grid, startNode, finishNode) {
     while(!!unvisitedNodes.length){
         // get the min (closest node) and re-heapify to maintain min-heap structure
         const closestNode = dequeue(unvisitedNodes)
+
         // skip if meet the wall
         if (closestNode.isWall) continue
+        
         // mark as visited and push into the array
         closestNode.isVisited = true
         visitedNodesInOrder.push(closestNode)
