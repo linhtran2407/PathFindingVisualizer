@@ -5,6 +5,7 @@ function Node(id, status) {
     this.distance = Infinity
     this.object = null
     this.weight = 0
+    
 }
 
 module.exports = Node

@@ -252,6 +252,8 @@ Board.prototype.drawShortestPath = function(targetNodeId, startNodeId, object) {
       }
     }
 
+    // FOR BIDRECTIONAL ALGORITHM
+
     // } else {
     //   if (this.middleNode !== this.target && this.middleNode !== this.start) {
     //     currentNode = this.nodes[this.nodes[this.middleNode].previousNode];
