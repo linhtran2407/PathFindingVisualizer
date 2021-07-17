@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Node from './Node/Node'
-import './PathFindingVisualizer.css'
+import Node from '../Node/Node'
+import './board.css'
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 
 const START_NODE_ROW = 10;
