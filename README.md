@@ -1,6 +1,6 @@
 # PathFindingVisualizer
 
-A visualizer tool for path finding algorithms, built with JavaScript, React.js
+A visualizer tool for path finding algorithms, built with JavaScript, React.js, and HTML/CSS
 
 Credit: Clément Mihailescu
 
