@@ -8,7 +8,7 @@ const START_NODE_COL = 15;
 const FINISH_NODE_ROW = 10;
 const FINISH_NODE_COL = 35;
 
-export default class PathFindingVisualizer extends Component {
+export default class Board extends Component {
     constructor(props) {
         super(props)
         this.state = {
