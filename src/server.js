@@ -1,27 +1,13 @@
-// import React from 'react'
-// import './App.css'
-// import PathFindingVisualizer from './PathFindingVisualizer/PathFindingVisualizer';
+// const express = require("express");
+// const app = express();
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <PathFindingVisualizer></PathFindingVisualizer>
-//     </div>
-//   );
-// }
+// app.use("/public", express.static(__dirname + "/public"))
 
-// export default App;
+// app.get("/", (req, res) => {
+//   res.sendFile(__dirname + "/index.html");
+// })
 
-const express = require("express");
-const app = express();
-
-app.use("/public", express.static(__dirname + "/public"))
-
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-})
-
-app.listen(3000, () => {
-  console.log("The server is up and running!");
-});
+// app.listen(3000, () => {
+//   console.log("The server is up and running!");
+// });
 
