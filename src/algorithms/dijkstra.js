@@ -33,8 +33,6 @@ export function dijkstra(grid, startNode, finishNode) {
         // neighbors node by 1
         updateUnvisitedNeighbors(closestNode, grid)
     }
-
-    return visitedNodesInOrder
 }
 
 function getUnvisitedNeighbors(node, grid) {

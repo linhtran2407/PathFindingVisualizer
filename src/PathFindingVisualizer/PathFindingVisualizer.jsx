@@ -13,7 +13,7 @@ export default class PathFindingVisualizer extends Component {
         super(props)
         this.state = {
             grid: [], // arrays of nodes for cells in grid
-            mouseIsPressed: false, // when press the mouse and drag, used when create wall
+            mouseIsPressed: false, // when press the mouse, used when create wall
         }
     }
 
@@ -46,7 +46,7 @@ export default class PathFindingVisualizer extends Component {
 
 
     animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
-        for (let i=0; i<visitedNodesInOrder.length; i++){
+        for (let i=0; i<=visitedNodesInOrder.length; i++){
             // if reach the finish node, animate the shortest path
             if (i === visitedNodesInOrder.length){
                 setTimeout(() => {
@@ -69,7 +69,7 @@ export default class PathFindingVisualizer extends Component {
             const node = nodesInShortestPathOrder[i]
             document.getElementById(`node-${node.row}-${node.col}`).className =
           'node node-shortest-path';
-        }, 50 * i);
+        }, 35 * i);
         }
     }
 
