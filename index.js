@@ -9,5 +9,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(`${PORT}`, () => {
-    console.log('Listening at 3000 and running successfully');
+    console.log('Listening at ' +`${PORT}`+ ' and running successfully');
 })

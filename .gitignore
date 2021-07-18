@@ -25,5 +25,6 @@ yarn-error.log*
 # ignore react version
 React version
 /src/Node/Node.jsx
+/src/board/board.css
 
 /.vscode
