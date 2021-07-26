@@ -1,6 +1,7 @@
 # PathFindingVisualizer
 
 A visualizer tool for path finding algorithms, built with JavaScript, React.js, and HTML/CSS
+Available at: https://linhtran2407.github.io/PathFindingVisualizer/
 
 Credit: Clément Mihailescu
 
